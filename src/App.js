@@ -8,9 +8,9 @@ function App() {
     return (
       <div>
         <a href='/Account'>
-        <button>Here</button>
-      </a>
-        This is the home!
+          <button>Login</button>
+        </a>
+       <button>Sign Up</button>
       </div>
     );
   }
