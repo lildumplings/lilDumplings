@@ -7,6 +7,9 @@ function App() {
   let renderHome = () => {
     return (
       <div>
+        <a href='/Account'>
+        <button>Here</button>
+      </a>
         This is the home!
       </div>
     );
@@ -14,9 +17,6 @@ function App() {
 
   return (
     <div className="App">
-      <a href='/Account'>
-        <button>Here</button>
-      </a>
       <Switch>
         <Route exact path={"/"} render={renderHome} />
         <Route path={"/Account"} component={Account} />
