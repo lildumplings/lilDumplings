@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import firebase from 'firebase/app';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +9,19 @@ class Login extends Component {
     }
   }
 
+  handleSignIn(email, password) {
+    this.setState({
+        errorMessage: null
+    });
 
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .catch((err) => {
+            console.log(err);
+            this.setState({
+                errorMessage: err.message
+            });
+        })
+ }
 
   render() {
     return (
