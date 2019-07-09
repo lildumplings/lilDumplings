@@ -33,6 +33,15 @@ class createAccount extends Component {
   render() {
     return (
       <div>
+        <label>
+            email:
+            <input type="text" name = "email" />
+          </label>
+          <label>password:
+            <input type="text" name ="password" />
+          </label>
+
+          {/* <input type="submit" value="Submit" /> */}
         <button variant="primary" style={{
           width: '400px',
           position: 'relative',
