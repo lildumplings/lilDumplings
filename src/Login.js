@@ -4,17 +4,17 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: ""
+      userName: "",
+      password: ""
     }
   }
 
-  handleSignIn(email, password) {
+  handleSignIn() {
     this.setState({
-        errorMessage: null
+      errorMessage: null
     });
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(this.state.userName, this.state.password)
         .catch((err) => {
             console.log(err);
             this.setState({
@@ -23,10 +23,26 @@ class Login extends Component {
         })
  }
 
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+ }
   render() {
+    let enabled = (this.state.userName === "" && this.state.password === "")
     return (
       <div>
-        Coming Soon!
+        <form>
+          <input
+            name="userName"
+            onChange={this.handleChange}
+            id="userName" />
+          <input
+            name="password"
+            onChange={this.handleChange}
+            id="fname" />
+          <button disable={!enabled} onClick={this.handleSignIn}>Submit</button>
+        </form>
       </div>
     );
   }

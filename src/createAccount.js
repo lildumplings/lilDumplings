@@ -32,9 +32,7 @@ class createAccount extends Component {
   render() {
     return (
       <div>
-        <form>
-         
-        </form>
+        Coming soon!
       </div>
     );
   }
