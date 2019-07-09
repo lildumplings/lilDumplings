@@ -8,10 +8,12 @@ function App() {
   let renderHome = () => {
     return (
       <div>
-        <a href='/createAccount'>
+        <a href='/login'>
           <button>Login</button>
         </a>
-       <button>Sign Up</button>
+        <a href='/createAccount'>
+          <button>Sign Up</button>
+        </a>
       </div>
     );
   }
@@ -21,6 +23,7 @@ function App() {
       <Switch>
         <Route exact path={"/"} render={renderHome} />
         <Route path={"/createAccount"} component={createAccount} />
+        <Route path={"/login"} component={Login} />
         <Redirect to={"/"} />
       </Switch>
     </div>
