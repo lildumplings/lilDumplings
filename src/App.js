@@ -1,13 +1,14 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import './css/App.css';
-import Account from './Account.js';
+import createAccount from './createAccount.js';
+import Login from './Login.js';
 
 function App() {
   let renderHome = () => {
     return (
       <div>
-        <a href='/Account'>
+        <a href='/createAccount'>
           <button>Login</button>
         </a>
        <button>Sign Up</button>
@@ -19,7 +20,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path={"/"} render={renderHome} />
-        <Route path={"/Account"} component={Account} />
+        <Route path={"/createAccount"} component={createAccount} />
         <Redirect to={"/"} />
       </Switch>
     </div>
