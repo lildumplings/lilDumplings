@@ -9,6 +9,7 @@ class Login extends Component {
     }
   }
 
+  // With the username and password set within the state, firebase will check and login to their account.
   handleSignIn() {
     this.setState({
       errorMessage: null
@@ -21,22 +22,27 @@ class Login extends Component {
                 errorMessage: err.message
             });
         })
- }
-
+  }
+  
+ // When the user inputs their username and password into the input boxes the state will automatically update with their information
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     });
- }
+  }
+  
+  // this is after the login button is selected
   render() {
-    let enabled = (this.state.userName === "" && this.state.password === "")
+    let enabled = (this.state.userName === "" && this.state.password === "");
     return (
       <div>
         <form>
+          {/* User adds email */}
           <input
             name="userName"
             onChange={this.handleChange}
             id="userName" />
+          {/* User inputs password */}
           <input
             name="password"
             onChange={this.handleChange}

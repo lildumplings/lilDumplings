@@ -5,8 +5,8 @@ class createAccount extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      email: ""
+      username: "",
+      password: ""
     }
   }
   handleSignUp(email, password, handle) {
@@ -14,7 +14,7 @@ class createAccount extends Component {
         errorMessage: null
     });
     
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password)
         .then((firebaseUser) => {
             let user = firebase.auth().currentUser;
             let promise = user.updateProfile({
@@ -29,10 +29,17 @@ class createAccount extends Component {
             });
         })
   }
+// After login 
   render() {
     return (
       <div>
-        Coming soon!
+        <button variant="primary" style={{
+          width: '400px',
+          position: 'relative',
+          top: '4em',
+          fontSize: '28px'
+        }}
+>Create Login</button>
       </div>
     );
   }
