@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase/app';
-import populartimes from '/populartimes';
+import populartimes from './populartimes/populartimes/__init__.py';
 
 class createAccount extends Component {
   constructor(props) {
