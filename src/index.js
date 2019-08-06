@@ -18,7 +18,7 @@ var firebaseConfig = {
     storageBucket: "test-project-49bc7.appspot.com",
     messagingSenderId: "707416577639",
     appId: "1:707416577639:web:1afbbdd001929f53"
-  };
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

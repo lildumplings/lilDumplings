@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase/app';
+import populartimes from '/populartimes';
 
 class createAccount extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class createAccount extends Component {
   }
 
   handleChange = (e) => {
+    console.log(populartimes.get_id("AIzaSyAj6s0U5zS3Su3awt6JxyiLEAfEJIfEyEc", "ChIJ9Z7V1rJqkFQR4PQw1WfZh3M"))
     this.setState({
       [e.target.name]: e.target.value
     });
