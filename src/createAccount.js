@@ -8,7 +8,10 @@ class createAccount extends Component {
       username: "",
       password: ""
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
   }
+  
   handleSignUp(email, password, handle) {
     this.setState({
         errorMessage: null
@@ -29,16 +32,22 @@ class createAccount extends Component {
             });
         })
   }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
 // After login 
   render() {
     return (
       <div>
         <label>
             email:
-            <input type="text" name = "email" />
+            <input type="text" name="username" onChange={this.handleChange}/>
           </label>
           <label>password:
-            <input type="text" name ="password" />
+            <input type="text" name ="password" onChange={this.handleChange}/>
           </label>
 
           {/* <input type="submit" value="Submit" /> */}
@@ -47,7 +56,7 @@ class createAccount extends Component {
           position: 'relative',
           top: '4em',
           fontSize: '28px'
-        }}
+        }} onClick={this.handleSignUp}
 >Create Login</button>
       </div>
     );
